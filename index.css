@@ -1,115 +1,132 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: 'Open Sans', sans-serif;
-    color: #fff;
-  }
-  
-  body {
-    background: url(./images/bg01.jpg) no-repeat center center fixed;
-    background-size: cover;
-  }
-  
-  #vanta {
-    z-index: 0;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-  }
-  
-  video {
-    z-index: 0;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  main {
-    position: relative;
-  }
-  
-  main.animated {
-    opacity: 0;
-    filter: blur(10px);
-    transition: opacity 2s ease-in-out, filter 2s ease-in-out;
-  }
-  
-  header {
-    margin-top: 3em;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  header > img {
-    width: 6em;
-    height: 6em;
-    border-radius: 100%;
-    border: 1px solid #fff;
-    box-shadow: rgb(28 32 93 / 24%) 0px 2px 8px 0px;
-  }
-  
-  header > h1 {
-    display: inline-block;
-    font-size: 0.8em;
-    font-weight: bold;
-    border-radius: 1em;
-    background-color: #000a;
-    color: #fff;
-    padding: 0.3em 0.6em;
-    border: 1px solid #fffa;
-    backdrop-filter: blur(10px) saturate(160%) contrast(180%);
-    -webkit-backdrop-filter: blur(10px) saturate(160%) contrast(180%);
-  }
-  
-  ul {
-    box-sizing: border-box;
-    list-style: none;
-    margin: 0 auto;
-    padding: 2em;
-    max-width: 480px;
-  }
-  
-  ul > li {
-    background-color: #fffa;
-    backdrop-filter: blur(10px) saturate(160%) contrast(180%);
-    -webkit-backdrop-filter: blur(10px) saturate(160%) contrast(180%);
-    border-radius: 10em;
-    margin: 1.4em 0;
-    box-shadow: rgb(28 32 93 / 24%) 0px 2px 8px 0px;
-  }
-  
-  ul > li > a {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 0.5em;
-    padding: 1em;
-  }
-  
-  a {
-    color: black;
-    text-decoration: none;
-  }
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #fff;
+}
 
-  footer {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    background-color: #707070;
-    color: #fff;
-    padding: 10px 20px;
-    text-align: center;
-  }
-  footer .container {
-    max-width: 1000px;
-    margin: 0 auto;
-  }
+body {
+  background: url(./images/bg01.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+#vanta {
+  z-index: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  position: relative;
+  z-index: 1; /* Memastikan isi utama di atas latar belakang */
+}
+
+header {
+  margin-top: 3em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header > img {
+  width: 6em;
+  height: 6em;
+  border-radius: 100%;
+  border: 1px solid #fff;
+  box-shadow: rgb(28 32 93 / 24%) 0px 2px 8px 0px;
+}
+
+header > h1 {
+  display: inline-block;
+  font-size: 0.8em;
+  font-weight: bold;
+  border-radius: 1em;
+  background-color: #000a;
+  color: #fff;
+  padding: 0.3em 0.6em;
+  border: 1px solid #fffa;
+  backdrop-filter: blur(10px) saturate(160%) contrast(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(160%) contrast(180%);
+}
+
+ul {
+  box-sizing: border-box;
+  list-style: none;
+  margin: 0 auto;
+  padding: 2em;
+  max-width: 480px;
+}
+
+ul > li {
+  background-color: #fffa;
+  backdrop-filter: blur(10px) saturate(160%) contrast(180%);
+  -webkit-backdrop-filter: blur(10px) saturate(160%) contrast(180%);
+  border-radius: 10em;
+  margin: 1.4em 0;
+  box-shadow: rgb(28 32 93 / 24%) 0px 2px 8px 0px;
+}
+
+ul > li > a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  padding: 1em;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+/* Container untuk Card */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* 3 kolom card dengan lebar minimum 300px */
+  gap: 20px; /* Jarak antar card */
+  max-width: 1200px; /* Lebar maksimum untuk container card */
+  margin: 20px auto; /* Card container berada di tengah */
+}
+
+/* Card */
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Pusatkan konten di dalam card */
+}
+
+.card h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card-content {
+  width: 100%;
+}
+
+.card-content iframe {
+  width: 100%;
+  height: 200px; /* Tinggi tetap untuk semua iframe */
+  border: none;
+  border-radius: 10px;
+}
+
+footer {
+  width: 100%;
+  background-color: #707070;
+  color: #fff;
+  padding: 10px 20px;
+  text-align: center;
+}
